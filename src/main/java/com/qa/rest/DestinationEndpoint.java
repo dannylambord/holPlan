@@ -27,32 +27,15 @@ public class DestinationEndpoint {
 	@Inject
 	private DestinationRepository accountRepository;
 	
-	@GET
+	@POST
+	@Consumes({"application/json"})
+	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/destination")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAll() {
-		List<Destination> list = accountRepository.readAll();
-		if (list.size() == 0) {
-			return Response.noContent().build();
-		}
-		return Response.ok(list).build();
+	public Response addAccount(Destination accountRS, @Context UriInfo uriInfo) {
+		accountRS = accountRepository.create(accountRS);
+		URI createdURI = uriInfo.getBaseUriBuilder().path(""+accountRS.getId()).build();
+		System.out.println(createdURI);
+		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
 	}
-	
-	@GET
-	@Path("/destination/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getOne(@PathParam("id") int id) {
-		if (accountRepository.read(id).equals(null)){
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Destination destination = accountRepository.read(id);
-		return Response.ok(destination).build();
-	}
-	
-	
-	
-	
-	
-	
 	
 }

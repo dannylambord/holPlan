@@ -15,17 +15,17 @@ public class HolidayPlannerTest
 //	public void setup() {
 //		HolTable h = new HolTable();
 //	}
-	@Test
-	public void addHolidayDestination()
-	{
-		String city = "Verona";
-		String country = "Italy";
-		Destination destination = new Destination(city,country);
-		String cityText = destination.getCity();
-		String countryText = destination.getCountry();
-		String text = (countryText + " " + cityText);
-		assertEquals("Wrong country returned", country + " " + city, text);
-	}
+//	@Test
+//	public void addHolidayDestination()
+//	{
+//		String city = "Verona";
+//		String country = "Italy";
+//		Destination destination = new Destination(city,country);
+//		String cityText = destination.getCity();
+//		String countryText = destination.getCountry();
+//		String text = (countryText + " " + cityText);
+//		assertEquals("Wrong country returned", country + " " + city, text);
+//	}
 	
 	
 	

@@ -8,8 +8,6 @@ public interface DestinationRepository {
 
 	public Destination create(Destination destination);
 	
-	public Destination read(int id);
-	public List<Destination> readAll();	
 
 	
 	

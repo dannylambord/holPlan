@@ -24,17 +24,6 @@ public class DestinationDB implements DestinationRepository{
 		return account;
 	}
 
-	public Destination read(int id) {
-		Destination destination = em.find(Destination.class, id);
-		return destination;
-	}
-	
-	public List<Destination> readAll() {
-
-		TypedQuery<Destination> q = em.createQuery("Select dest from Destination dest" , Destination.class);
-		List<Destination> list = q.getResultList();
-		return list;
-	}
 
 
 }

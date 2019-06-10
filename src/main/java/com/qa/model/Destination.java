@@ -15,11 +15,6 @@ public class Destination {
 	String country;
 	
 	
-	public Destination(String city, String country) {
-		this.city = city;
-		this.country = country;
-	}
-	
 	
 	public void getDestination(int id) {
 		
