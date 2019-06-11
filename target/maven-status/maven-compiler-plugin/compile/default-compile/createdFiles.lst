@@ -1,0 +1,6 @@
+com/qa/model/Destination.class
+com/qa/repository/DestinationDB.class
+com/qa/model/Holiday.class
+com/qa/repository/DestinationRepository.class
+com/qa/rest/JAXRSConfiguration.class
+com/qa/rest/DestinationEndpoint.class
