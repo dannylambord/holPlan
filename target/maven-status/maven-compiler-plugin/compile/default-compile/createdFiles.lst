@@ -1,5 +1,5 @@
-com\qa\model\Destination.class
-com\qa\repository\DestinationDB.class
-com\qa\rest\DestinationEndpoint.class
-com\qa\rest\JAXRSConfiguration.class
-com\qa\repository\DestinationRepository.class
+com/qa/model/Destination.class
+com/qa/repository/DestinationDB.class
+com/qa/repository/DestinationRepository.class
+com/qa/rest/JAXRSConfiguration.class
+com/qa/rest/DestinationEndpoint.class
