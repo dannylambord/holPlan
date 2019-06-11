@@ -4,8 +4,6 @@ import java.net.URI;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -27,27 +25,17 @@ import com.qa.repository.DestinationRepository;
 public class DestinationEndpoint {
 
 	@Inject
-	private DestinationRepository destRepo;
-
+	private DestinationRepository accountRepository;
 	
-
-	
-	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
+	@POST
 	@Consumes({"application/json"})
-	@Path("/destination/{id}")
-	public Response updateAccount(Destination destination, @PathParam("id") int id) {
-		if (destRepo.read(id).equals(null)){
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Destination accountRS2 = destRepo.update(id, destination);
-		return Response.ok(accountRS2).build();
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/destination")
+	public Response addAccount(Destination accountRS, @Context UriInfo uriInfo) {
+		accountRS = accountRepository.create(accountRS);
+		URI createdURI = uriInfo.getBaseUriBuilder().path(""+accountRS.getId()).build();
+		System.out.println(createdURI);
+		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
 	}
-	
-	
-	
-	
-	
-	
 	
 }

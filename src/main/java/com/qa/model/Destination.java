@@ -14,6 +14,14 @@ public class Destination {
 	String city;
 	String country;
 	
+	
+	
+	public void getDestination(int id) {
+		
+		System.out.println(getCity());
+	}
+
+
 	public int getId() {
 		return id;
 	}

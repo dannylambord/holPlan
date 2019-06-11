@@ -26,7 +26,7 @@ public class HolidayPlannerTest
 //		String text = (countryText + " " + cityText);
 //		assertEquals("Wrong country returned", country + " " + city, text);
 //	}
-//	
-//	
-//	
+	
+	
+	
 }
