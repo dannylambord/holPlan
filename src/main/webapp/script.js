@@ -38,5 +38,3 @@ function fetchData(type,ext,sen) {
      console.log(req.responseText);
        
      })};
-
-

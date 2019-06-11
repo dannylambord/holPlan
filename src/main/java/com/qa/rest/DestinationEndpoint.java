@@ -49,6 +49,17 @@ public class DestinationEndpoint {
 		return Response.ok(destination).build();
 	}
 	
+	@POST
+	@Consumes({"application/json"})
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/destination")
+	public Response addAccount(Destination accountRS, @Context UriInfo uriInfo) {
+		accountRS = accountRepository.create(accountRS);
+		URI createdURI = uriInfo.getBaseUriBuilder().path(""+accountRS.getId()).build();
+		System.out.println(createdURI);
+		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
+	}
+	
 	
 	
 	

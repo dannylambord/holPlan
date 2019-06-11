@@ -30,18 +30,14 @@ function fetchData(type,ext,sen) {
     req.send(x);
         
     })
-
-
 }
 
-function addDest(){
-    submit();
-    let s = JSON.stringify(dest);
-   fetchData("POST","/destination",s).then((req)=>{ 
+function update(){
+    let y = new dest();
+    y.city = document.getElementById("city");
+    y.country = document.getElementById("country");
+    y = JSON.stringify(y);
+    var text = document.getElementById("user").value;
+   fetchData("PUT","/destination/" + text, y).then((req)=>{
 console.log(req.responseText);
 })};
-
-function submit(){
-   dest.city = document.getElementById("city").value;
-    dest.country= document.getElementById("country").value;
-}
