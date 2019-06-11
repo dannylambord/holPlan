@@ -1,3 +1,11 @@
+let dest = {
+    id : 0,
+    locId : 0,
+    city : " ",
+    country : " "
+}
+
+
 function fetchData(type,ext,sen) {
     let x = sen;
 
@@ -24,17 +32,12 @@ function fetchData(type,ext,sen) {
     })
 }
 
-
-
-    function getAll(){
-       fetchData("GET", "/destination/",null).then((req)=>{
-    console.log(req.responseText);
-      
-    })};
-
-    function getOne(){
-        var text = document.getElementById("user").value;
-        fetchData("GET", "/destination/" + text,null).then((req)=>{
-     console.log(req.responseText);
-       
-     })};
+function update(){
+    let y = new dest();
+    y.city = document.getElementById("city");
+    y.country = document.getElementById("country");
+    y = JSON.stringify(y);
+    var text = document.getElementById("user").value;
+   fetchData("PUT","/destination/" + text, y).then((req)=>{
+console.log(req.responseText);
+})};
