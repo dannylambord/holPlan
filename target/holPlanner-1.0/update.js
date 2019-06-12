@@ -33,11 +33,9 @@ function fetchData(type,ext,sen) {
 }
 
 function update(){
-    let y = new dest();
-    y.city = document.getElementById("city");
-    y.country = document.getElementById("country");
-    y = JSON.stringify(y);
-    var text = document.getElementById("user").value;
-   fetchData("PUT","/destination/" + text, y).then((req)=>{
-console.log(req.responseText);
+    dest.city = document.getElementById("city");
+    dest.country = document.getElementById("country");
+    let y = JSON.stringify(dest);
+   fetchData("PUT","/destination/" + dest.locId, y).then((req)=>{
+    console.log(req.responseText);
 })};
