@@ -45,5 +45,10 @@ public class DestinationDB implements DestinationRepository{
 		System.out.println(read(destination.getId()).getCity());
 		return destination;
 	}
+	
+	@Transactional(value = TxType.REQUIRED)
+	public void delete(int id) {
+		em.remove(read(id));
+	}
 
 }

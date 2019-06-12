@@ -72,6 +72,16 @@ public class DestinationEndpoint {
 		return Response.ok(accountRS2).build();
 	}
 	
+	@DELETE
+	@Path("/destination/{id}")
+	public Response deleteAccount(@PathParam("id") int id) {
+		if (accountRepository.read(id).equals(null)){
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		accountRepository.delete(id);
+		return Response.noContent().build();
+	}
+	
 	
 	
 	
