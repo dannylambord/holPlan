@@ -10,3 +10,7 @@
      console.log(req.responseText);
        
      })};
+
+     function nextPage(){
+        window.location.href = "page2.html"
+     }
