@@ -64,7 +64,7 @@ public class DestinationEndpoint {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({"application/json"})
 	@Path("/destination/{id}")
-	public Response updateAccount(Destination account, @PathParam("id") int id) {
+	public Response updateDestination(Destination account, @PathParam("id") int id) {
 		if (accountRepository.read(id).equals(null)){
 			return Response.status(Status.NOT_FOUND).build();
 		}

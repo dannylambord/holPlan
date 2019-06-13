@@ -15,7 +15,7 @@ import com.qa.model.Destination;
 @Transactional(value = TxType.SUPPORTS)
 public class DestinationDB implements DestinationRepository{
 
-	@PersistenceContext(unitName = "h")
+	@PersistenceContext(unitName = "q")
 	private EntityManager em;
 	
 	@Transactional(value = TxType.REQUIRED)
@@ -39,11 +39,18 @@ public class DestinationDB implements DestinationRepository{
 	
 	@Transactional(value = TxType.REQUIRED)
 	public Destination update(int id, Destination newInfo) {
-		Destination destination = read(id);
-		destination.setCity(newInfo.getCity());
-		destination.setCountry(newInfo.getCountry());
-		System.out.println(read(destination.getId()).getCity());
-		return destination;
+		Destination account = read(id);
+		
+		if(newInfo.getCity().equals((account.getCity()))){
+			
+		}
+		else {
+			account.setCity(newInfo.getCity());
+		}
+		
+		account.setCountry(newInfo.getCountry());
+		System.out.println(read(account.getId()));
+		return account;
 	}
 	
 	@Transactional(value = TxType.REQUIRED)

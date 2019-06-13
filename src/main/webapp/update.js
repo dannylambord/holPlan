@@ -1,7 +1,18 @@
+class Destination{
+    constructor(city, country){
+        this.city = city;
+        this.country = country;
+    }
+}
+
 function update(){
-    dest.city = document.getElementById("city");
-    dest.country = document.getElementById("country");
-    let y = JSON.stringify(dest);
-   fetchData("PUT","/destination/" + dest.locId, y).then((req)=>{
+    let ci = document.getElementById("city").value;
+    let co= document.getElementById("country").value;
+    let y = new Destination(ci,co);
+    y = JSON.stringify(y);
+    let i = document.getElementById("id").value;
+   fetchData("PUT","/destination/" + i, y).then((req)=>{
     console.log(req.responseText);
 })};
+
+

@@ -14,9 +14,9 @@
                                 </a>
                                 <div class="dropdown-menu">
                                   <a class="dropdown-item" href="#">View all destinations</a>
-                                  <a class="dropdown-item" onclick = "nextPage()">Update a destination</a>
+                                  <a class="dropdown-item" onclick = "updatePage()">Update a destination</a>
                                   <a class="dropdown-item" onclick = "nextPage()" >Add a destination</a>
-                                  <a class="dropdown-item" href="#">Delete a destination</a>
+                                  <a class="dropdown-item" onclick = "deletePage()">Delete a destination</a>
                                 </div>
                               </li> 
                   </ul>
@@ -26,12 +26,26 @@
         
     </head>
     <body>
-         User <input type="text" id="user"><br>
+         User <input type="text" id="user"><br><br>
         <button  onclick="getOne()" >Get the record of the id entered</button>
         <button onclick="getAll()" >Get all records</button>
-        <button onclick="deleteDest()" >Delete</button>
-        <button  onclick = "nextPage()"  >Add destination</button>
-        <p id = "Para" > </p>
+        <button onClick="showList()" > submit </button> <br><br>
+
+        
+        <div id="Destination" class="col-3" >
+          
+          <table id="table"  class="table table-dark table-responsive">
+              <tr>
+                  <th>id</th>
+                  <th>locId</th>
+                  <th>city</th>
+                  <th>country</th>
+              </tr>
+              <div id="innerbody">
+  
+              </div>
+  
+      </div>
 
     </body>
 
