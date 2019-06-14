@@ -14,6 +14,7 @@ import com.qa.model.User;
 import com.qa.repository.DestinationRepository;
 import com.qa.repository.UserRepository;
 
+@Path("/")
 public class UserEndpoints {
 
 	@Inject
