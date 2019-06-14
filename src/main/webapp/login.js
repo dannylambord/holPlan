@@ -15,6 +15,8 @@ function login(){
        // console.log(t);
         sessionStorage.clear();
         sessionStorage.setItem("userLogin",t);
-        let x = sessionStorage.getItem("userLogin");
-        console.log(x);
+        let x = [];
+         x.push(t);
+         
+         console.logx["id"];
     })};
