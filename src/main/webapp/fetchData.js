@@ -24,7 +24,7 @@ function fetchData(type,ext,sen) {
 
         };
             
-    req.open(type, "35.246.36.67/holPlanner-1.0/api" + ext);
+    req.open(type, "api" + ext);
     req.setRequestHeader("Content-Type","application/json");
     if(type == "GET" || type == "DELETE"){
             req.send();
