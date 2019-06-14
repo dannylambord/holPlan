@@ -9,7 +9,7 @@ function getAll(){
 
 })};
 
-function getAllU(){
+function getAllUser(){
     fetchData("GET", "/user/",null).then((req)=>{
             t = req .responseText;
             sessionStorage.clear();
