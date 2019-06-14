@@ -1,15 +1,20 @@
 package com.qa.rest;
 
+import java.net.URI;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.UriInfo;
 
 import com.qa.model.Destination;
 import com.qa.model.User;
@@ -33,4 +38,13 @@ public class UserEndpoints {
 		return Response.ok(user).build();
 	}
 	
+	@POST
+	@Consumes({"application/json"})
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/user")
+	public Response addUser(User userRS, @Context UriInfo uriInfo) {
+		userRS = userRepository.create(userRS);
+		URI createdURI = uriInfo.getBaseUriBuilder().path(""+userRS.getId()).build();
+		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
+	}
 }
