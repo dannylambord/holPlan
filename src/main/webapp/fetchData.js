@@ -16,7 +16,7 @@ function fetchData(type,ext,sen) {
             if (req.readyState === 4) {
                 if (req.status >= 200 && req.status <300) {
                     resolve(req);
-                    console.log("connected");
+                    console.log("connected"); 
                 } else {
                     reject("Failed");
                 }
