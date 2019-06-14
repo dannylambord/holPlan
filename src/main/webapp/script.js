@@ -37,10 +37,13 @@ console.log(req.responseText);
       document.getElementById("table").innerHTML="";
       let t = sessionStorage.getItem("userData");
       let userData = JSON.parse(t);
+      console.log(userData);
       if(userData.length > 1){
          userData == userData;
       }else{
-         userData = userData[userData];
+         let x = [];
+         x.push(userData);
+         userData = x;
       }
       let tableOne = document.getElementById("table");
       let header = tableOne.createTHead();
