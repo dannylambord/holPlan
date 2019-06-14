@@ -1,8 +1,12 @@
 package com.qa.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Destination {
@@ -10,9 +14,14 @@ public class Destination {
 	@Id
 	@GeneratedValue
 	int locId = 0;
+	
 	int id = 0;
 	String city;
 	String country;
+	
+	@ManyToOne
+    @JoinColumn(name = "id")
+    private User user;
 	
 
 
