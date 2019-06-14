@@ -22,17 +22,7 @@ console.log(req.responseText);
        
      })};
 
-     function nextPage(){
-        window.location.href = "add.html"
-     }
-
-     function updatePage(){
-        window.location.href = "update.html"
-     }
-
-     function deletePage(){
-      window.location.href = "delete.html"
-   }
+  
    function showList() {
       document.getElementById("table").innerHTML="";
       let t = sessionStorage.getItem("userData");
