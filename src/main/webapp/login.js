@@ -12,8 +12,9 @@ function login(){
     fetchData("GET","/user/1",null).then((req)=> {
         t = req .responseText;
         user = t;
-        console.log(t);
+       // console.log(t);
         sessionStorage.clear();
         sessionStorage.setItem("userLogin",t);
-
+        let x = sessionStorage.getItem("userLogin");
+        console.log(x);
     })};
