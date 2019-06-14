@@ -14,7 +14,7 @@ import com.qa.model.User;
 @Transactional(value = TxType.SUPPORTS)
 public class UserDB implements UserRepository {
 	
-	@PersistenceContext(unitName = "q")
+	@PersistenceContext(unitName = "e")
 	private EntityManager em;
 	
 	@Transactional(value = TxType.REQUIRED)

@@ -15,7 +15,7 @@ import com.qa.model.Destination;
 @Transactional(value = TxType.SUPPORTS)
 public class DestinationDB implements DestinationRepository{
 
-	@PersistenceContext(unitName = "q")
+	@PersistenceContext(unitName = "e")
 	private EntityManager em;
 	
 	@Transactional(value = TxType.REQUIRED)
