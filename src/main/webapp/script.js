@@ -2,14 +2,11 @@ var t;
 let x;
 
 function getAll(){
-   fetchData("GET", "/destination/",null)
-
-   .then((req)=>{
+   fetchData("GET", "/destination/",null).then((req)=>{
            t = req.responseText;
            sessionStorage.clear();
            sessionStorage.setItem("userData",t);
-console.log(req.responseText);
-  
+
 })};
 
     function getOne(){
@@ -22,7 +19,6 @@ console.log(req.responseText);
        
      })};
 
-  
    function showList() {
       document.getElementById("table").innerHTML="";
       let t = sessionStorage.getItem("userData");
