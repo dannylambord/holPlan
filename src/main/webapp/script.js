@@ -11,7 +11,7 @@ function getAll(){
 
 function getAllU(){
     fetchData("GET", "/user/",null).then((req)=>{
-            t = req.responseText;
+            t = req .responseText;
             sessionStorage.clear();
             sessionStorage.setItem("userData",t);
  
