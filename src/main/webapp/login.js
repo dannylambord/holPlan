@@ -15,8 +15,10 @@ function login(){
        // console.log(t);
         sessionStorage.clear();
         sessionStorage.setItem("userLogin",t);
+        let y = sessionStorage.getItem(t);
+        let data = JSON.parse(y);
         let x = [];
-         x.push(t);
+         x.push(data);
          
-         console.logx["id"];
+         console.log(x["id"]);
     })};
