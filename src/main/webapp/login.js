@@ -11,14 +11,7 @@ function login(){
     let pass = document.getElementById("pass");
     fetchData("GET","/user/1",null).then((req)=> {
         t = req .responseText;
-        user = t;
-       // console.log(t);
+        user = JSON.parse(t);
         sessionStorage.clear();
-        sessionStorage.setItem("userLogin",t);
-        let y = sessionStorage.getItem(t);
-        let data = JSON.parse(y);
-        let x = [];
-         x.push(data);
-         
-         console.log(x["id"]);
-    })};
+        sessionStorage.setItem("userLogin",user);
+        })};
