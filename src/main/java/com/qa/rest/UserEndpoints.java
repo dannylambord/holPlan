@@ -28,7 +28,7 @@ public class UserEndpoints {
 	private UserRepository userRepository;
 	
 	@GET
-	@Path("/user")
+	@Path("/user/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOne(@PathParam("id") int id) {
 		if(userRepository.read(id).equals(null)){
