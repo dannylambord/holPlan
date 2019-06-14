@@ -49,6 +49,39 @@ public class DestinationEndpoint {
 		return Response.ok(destination).build();
 	}
 	
+	@POST
+	@Consumes({"application/json"})
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/destination")
+	public Response addAccount(Destination accountRS, @Context UriInfo uriInfo) {
+		accountRS = accountRepository.create(accountRS);
+		URI createdURI = uriInfo.getBaseUriBuilder().path(""+accountRS.getId()).build();
+		System.out.println(createdURI);
+		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
+	}
+	
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes({"application/json"})
+	@Path("/destination/{id}")
+	public Response updateDestination(Destination account, @PathParam("id") int id) {
+		if (accountRepository.read(id).equals(null)){
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		Destination accountRS2 = accountRepository.update(id, account);
+		return Response.ok(accountRS2).build();
+	}
+	
+	@DELETE
+	@Path("/destination/{id}")
+	public Response deleteAccount(@PathParam("id") int id) {
+		if (accountRepository.read(id).equals(null)){
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		accountRepository.delete(id);
+		return Response.noContent().build();
+	}
+	
 	
 	
 	

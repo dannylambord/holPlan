@@ -10,6 +10,10 @@ public interface DestinationRepository {
 	
 	public Destination read(int id);
 	public List<Destination> readAll();	
+	
+	public Destination update(int id, Destination destination);
+	
+	public void delete(int id);
 
 	
 	

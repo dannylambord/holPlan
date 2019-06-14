@@ -14,14 +14,6 @@ public class Destination {
 	String city;
 	String country;
 	
-	
-
-	
-	
-	public void getDestination(int id) {
-		
-		System.out.println(getCity());
-	}
 
 
 	public int getId() {
@@ -30,7 +22,7 @@ public class Destination {
 
 
 	public void setId(int id) {
-		this.id = Holiday.getId();
+		this.id = id;
 	}
 
 
