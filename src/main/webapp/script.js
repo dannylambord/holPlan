@@ -9,6 +9,14 @@ function getAll(){
 
 })};
 
+function getAllU(){
+    fetchData("GET", "/user/",null).then((req)=>{
+            t = req.responseText;
+            sessionStorage.clear();
+            sessionStorage.setItem("userData",t);
+ 
+ })};
+
     function getOne(){
         var text = document.getElementById("user").value;
         fetchData("GET", "/destination/" + text,null).then((req)=>{

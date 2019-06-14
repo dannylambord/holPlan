@@ -19,9 +19,9 @@ public class DestinationDB implements DestinationRepository{
 	private EntityManager em;
 	
 	@Transactional(value = TxType.REQUIRED)
-	public Destination create(Destination account) {
-		em.persist(account);
-		return account;
+	public Destination create(Destination destination) {
+		em.persist(destination);
+		return destination;
 	}
 
 	public Destination read(int id) {
