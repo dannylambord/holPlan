@@ -2,15 +2,20 @@ var t;
 let x;
 
 function getAll(){
-   fetchData("GET", "/destination/",null)
-
-   .then((req)=>{
+   fetchData("GET", "/destination/",null).then((req)=>{
            t = req.responseText;
            sessionStorage.clear();
            sessionStorage.setItem("userData",t);
-console.log(req.responseText);
-  
+
 })};
+
+function getAllUser(){
+    fetchData("GET", "/user/",null).then((req)=>{
+            t = req .responseText;
+            sessionStorage.clear();
+            sessionStorage.setItem("userData",t);
+ 
+ })};
 
     function getOne(){
         var text = document.getElementById("user").value;
@@ -22,25 +27,17 @@ console.log(req.responseText);
        
      })};
 
-     function nextPage(){
-        window.location.href = "add.html"
-     }
-
-     function updatePage(){
-        window.location.href = "update.html"
-     }
-
-     function deletePage(){
-      window.location.href = "delete.html"
-   }
    function showList() {
       document.getElementById("table").innerHTML="";
       let t = sessionStorage.getItem("userData");
       let userData = JSON.parse(t);
+      console.log(userData);
       if(userData.length > 1){
          userData == userData;
       }else{
-         userData = userData[userData];
+         let x = [];
+         x.push(userData);
+         userData = x;
       }
       let tableOne = document.getElementById("table");
       let header = tableOne.createTHead();

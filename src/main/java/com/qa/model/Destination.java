@@ -19,9 +19,6 @@ public class Destination {
 	String city;
 	String country;
 	
-	@ManyToOne
-    @JoinColumn(name = "id")
-    private User user;
 	
 
 

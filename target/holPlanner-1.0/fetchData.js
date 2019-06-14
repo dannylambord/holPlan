@@ -16,7 +16,7 @@ function fetchData(type,ext,sen) {
             if (req.readyState === 4) {
                 if (req.status >= 200 && req.status <300) {
                     resolve(req);
-                    console.log("connected");
+                    console.log("connected"); 
                 } else {
                     reject("Failed");
                 }
@@ -24,7 +24,7 @@ function fetchData(type,ext,sen) {
 
         };
             
-    req.open(type, "http://localhost:8080/holPlanner-1.0/api" + ext);
+    req.open(type, "api" + ext);
     req.setRequestHeader("Content-Type","application/json");
     if(type == "GET" || type == "DELETE"){
             req.send();
