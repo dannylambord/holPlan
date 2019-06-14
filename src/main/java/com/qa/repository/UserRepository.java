@@ -9,6 +9,6 @@ public interface UserRepository {
 	
 	public User create(User user);
 
-	public List<User> readAll();
+	public User read(int id);
 
 }

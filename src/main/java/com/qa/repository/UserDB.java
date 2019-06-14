@@ -23,11 +23,9 @@ public class UserDB implements UserRepository {
 		return user;
 	}
 	
-	public List<User> readAll() {
-
-		TypedQuery<User> q = em.createQuery("Select user from User user" , User.class);
-		List<User> list = q.getResultList();
-		return list;
+	public User read(int id) {
+		User user = em.find(User.class, id);
+		return user;
 	}
 
 }
