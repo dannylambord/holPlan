@@ -14,6 +14,8 @@ public class AddPage {
 	@FindBy(xpath = "/html/body/button[1]")
 	private WebElement submit;
 	
+	@FindBy(xpath = "//*[@id=\"para\"]")
+	private WebElement status;
 	public void enterCity(String text) {
 		city.sendKeys(text);
 	}
@@ -27,7 +29,7 @@ public class AddPage {
 	}
 	
 	public String addSuccesfull() {
-		return submit.getText();
+		return status.getText();
 	}
 	
 	
