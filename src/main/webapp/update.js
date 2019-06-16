@@ -13,6 +13,12 @@ function update(){
     let i = document.getElementById("id").value;
    fetchData("PUT","/destination/" + i, y).then((req)=>{
     console.log(req.responseText);
+    if(req.responseText = "connected"){
+        var element = document.getElementById("para");
+        element.innerHTML = "successful";
+    }else{
+        document.getElementById("para").innerHTML = "Destination not updated please try again";
+    }
 })};
 
 

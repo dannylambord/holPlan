@@ -4,9 +4,10 @@ function addDest(){
    fetchData("POST","/destination",s).then((req)=>{ 
 console.log(req.responseText);
 if(req.responseText = "connected"){
-    document.getElementById("para").innerHTML("successful")
+    var element = document.getElementById("para");
+    element.innerHTML = "successful";
 }else{
-    document.getElementById("para").innerHTML("Destination not added please try again")
+    document.getElementById("para").innerHTML = "Destination not added please try again";
 }
 })};
 

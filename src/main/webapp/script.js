@@ -23,6 +23,8 @@ function getAllUser(){
          t = req.responseText;
          sessionStorage.clear();
          sessionStorage.setItem("userData",t);
+         if(req.responseText = "connected"){
+   
          
        
      })};
