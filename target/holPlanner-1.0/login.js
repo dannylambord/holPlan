@@ -6,12 +6,14 @@ let user = {
 
 
 function login(){
+ 
+    let uName = document.getElementById("uName");
+    let pass = document.getElementById("pass");
     fetchData("GET","/user/1",null).then((req)=> {
         t = req .responseText;
-        console.log(t);
         sessionStorage.clear();
         sessionStorage.setItem("userLogin",user);
-        //getSessionInfo();
+        getSessionInfo();
         })};
 
 function getSessionInfo(){

@@ -1,5 +1,5 @@
    function addPage(){
-        window.location.href = "add.html"
+        window.location.href = "index.html"
      }
 
      function updatePage(){
