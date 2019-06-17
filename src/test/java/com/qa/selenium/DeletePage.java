@@ -11,6 +11,27 @@ public class DeletePage {
 	@FindBy(xpath = "/html/body/button")
 	private WebElement submit;
 	
+	@FindBy(xpath = "//*[@id=\"Para\"]")
+	private WebElement status;
+	
+	@FindBy(xpath = "/html/body/h1")
+	private WebElement pageName;
+	
+	@FindBy(xpath = "//*[@id=\"navbardrop\"]")
+	private WebElement dropdown;
+	
+	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/ul/li/div/a[1]")
+	private WebElement viewNav;
+	
+	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/ul/li/div/a[2]")
+	private WebElement updateNav;
+	
+	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/ul/li/div/a[3]")
+	private WebElement addNav;
+	
+	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/a")
+	private WebElement homeNav;
+	
 	public void enterId(String text) {
 		id.sendKeys(text);
 	}
@@ -19,8 +40,34 @@ public class DeletePage {
 		submit.click();
 	}
 	
-	public String addSuccesfull() {
+	public String deleteSuccesfull() {
 		return submit.getText();
 	}
+	
+	public String getPageName() {
+		return pageName.getText();
+	}
+	
+	public void dropdownShow() {
+		dropdown.click();
+	}
+	
+	public void viewNav() {
+		viewNav.click();
+	}
+	
+	public void addNav() {
+		addNav.click();
+	}
+	
+	public void updateNav() {
+		updateNav.click();
+	}
+	
+	public void homeNav() {
+		homeNav.click();
+	}
+	
+	
 
 }
