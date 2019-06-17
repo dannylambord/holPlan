@@ -373,7 +373,7 @@ WebDriver driver;
 	}
 	
 	@Test 
-	public void homeNavigationTest3() {
+	public void homeNavigationTest4() {
 		
 		driver.manage().window().maximize();
 		driver.get("http://35.246.36.67:8080/holPlanner-1.0/view.html");

@@ -38,6 +38,9 @@ public class ViewPage {
 	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/ul/li/div/a[4]")
 	private WebElement deleteNav;
 	
+	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/a")
+	private WebElement homeNav;
+	
 	public void enter() {
 		submit.click();
 	}
@@ -82,5 +85,10 @@ public class ViewPage {
 	
 	public void deleteNav() {
 		deleteNav.click();
+	}
+	
+	public void homeNav() {
+		homeNav.click();
+		
 	}
 }

@@ -32,6 +32,9 @@ public class DeletePage {
 	@FindBy(xpath = "//*[@id=\"collapsibleNavbar\"]/a")
 	private WebElement homeNav;
 	
+	@FindBy(xpath = "//*[@id=\"Para\"]")
+	private WebElement deleteStatus;
+	
 	public void enterId(String text) {
 		id.sendKeys(text);
 	}
@@ -41,7 +44,7 @@ public class DeletePage {
 	}
 	
 	public String deleteSuccesfull() {
-		return submit.getText();
+		return deleteStatus.getText();
 	}
 	
 	public String getPageName() {
