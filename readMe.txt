@@ -16,6 +16,8 @@ The server should now be viewable at localhost:8082
 (the username should be 'sa' and the password will either be empty '' or 'sa')
 
 2.2. Create a war file for the project
+Within the javascript files any link to any pages will have to be changed from 25.246.36.67 to localhost in order to allow it to run locally
+
 Using maven, run mvn install on the project and take the created .war file and place it in the deployments of your wildfly server.
 
 (DONT RUN WILDFLY JUST YET!)
